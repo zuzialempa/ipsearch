@@ -1,0 +1,2 @@
+export const CACHE_EXPIRATION_MS = 60*1000
+export const CACHE_EXPIRATION_S = 60

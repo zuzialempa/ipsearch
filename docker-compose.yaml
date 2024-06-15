@@ -1,0 +1,17 @@
+services:
+  server:
+    build:
+      context: .
+    environment:
+      NODE_ENV: production
+      STORAGE_OPTION: redis
+      REDIS_CONNECTION_STRING: redis://redis-cache:6379
+    ports:
+      - 3000:3000
+    depends_on:
+      - redis-cache
+  redis-cache:
+    image: redis:6.2-alpine
+    restart: always
+    ports:
+      - '6379:6379'
